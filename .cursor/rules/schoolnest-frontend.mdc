@@ -1,0 +1,254 @@
+---
+description: SchoolNest frontend standards — React JS, plain CSS, architecture, UI, and development workflow
+alwaysApply: true
+---
+
+# SchoolNest Frontend — Cursor Rules
+
+## Project Overview
+
+SchoolNest is a frontend-only web application built using React JS. Follow a scalable, reusable, clean architecture that is easy to maintain and extend.
+
+## 1. Technology Stack
+
+- Use React JS only.
+- Do NOT use TypeScript.
+- Use JavaScript (`.jsx` / `.js`) files only.
+- Use normal CSS only.
+- Do NOT use Tailwind CSS, Bootstrap, Material UI, Chakra UI, Styled Components, Sass/SCSS, or any CSS framework unless explicitly instructed.
+
+## 2. Project Structure
+
+```
+src/
+  assets/
+    images/
+    icons/
+    fonts/
+  components/
+    ComponentName/
+      ComponentName.jsx
+      ComponentName.css
+  pages/
+  layouts/
+  hooks/
+  utils/
+  constants/
+  theme/
+    colors.js
+    typography.js
+    spacing.js
+  contexts/
+  services/
+  routes/
+  styles/
+```
+
+Every reusable component must have its own folder.
+
+Example:
+
+```
+components/
+  Button/
+    Button.jsx
+    Button.css
+  Navbar/
+    Navbar.jsx
+    Navbar.css
+  StudentCard/
+    StudentCard.jsx
+    StudentCard.css
+```
+
+## 3. Naming Convention
+
+Use camelCase throughout the project.
+
+- Files: `studentCard.jsx`, `loginPage.jsx`, `dashboardLayout.jsx`, `themeColors.js`, `useAuth.js`
+- Variables: `studentList`, `isLoggedIn`, `selectedCourse`, `userProfile`
+- Functions: `handleSubmit()`, `fetchStudentList()`, `calculateTotal()`
+
+Do not use inconsistent naming.
+
+## 4. CSS Rules
+
+- Use only separate CSS files.
+- Every JSX file must have its own CSS file.
+- Never use inline styles, CSS frameworks, or global styling unless absolutely necessary.
+- Use reusable utility classes whenever possible.
+- Avoid duplicate CSS.
+
+## 5. Component Rules
+
+Always create reusable components whenever possible.
+
+Examples: Button, Input, Card, Modal, Loader, Badge, Table, Empty State, Search Bar, Pagination, Section Title.
+
+Never duplicate UI code. If the same UI appears more than once, convert it into a reusable component.
+
+## 6. Reusability
+
+Before creating anything new, check existing components, utility functions, constants, theme values, and styles. Reuse them. Avoid duplicate code.
+
+## 7. Theme Management
+
+Never hardcode colors repeatedly. Maintain `theme/colors.js`, `theme/typography.js`, and `theme/spacing.js`. Import colors from the theme folder.
+
+Example tokens: `primary`, `secondary`, `background`, `textPrimary`, `textSecondary`, `success`, `warning`, `danger`, `border`.
+
+## 8. Code Splitting
+
+Never create overly large files. If a component becomes too long, split it into child components, hooks, utility functions, or constants. Keep files focused on a single responsibility.
+
+## 9. Code Optimization (Highest Priority)
+
+Always optimize the code.
+
+Avoid: duplicate rendering, duplicate logic, unnecessary state, unnecessary re-renders.
+
+Prefer: reusable logic, small components, clean functions, efficient rendering. Keep components lightweight.
+
+## 10. Comments
+
+Write comments only where logic is difficult to understand. Do not comment every line. Use meaningful comments.
+
+Examples:
+- `// Calculate the final percentage after attendance adjustment`
+- `// Prevent unnecessary re-render by memoizing the computed value`
+- `// Validate user input before submission`
+
+## 11. React Best Practices
+
+- Use functional components only.
+- Use React hooks only: `useState`, `useEffect`, `useMemo`, `useCallback`, and custom hooks when needed.
+- Avoid unnecessary state. Keep components clean.
+
+## 12. Folder Responsibility
+
+Each folder has a single responsibility:
+
+- `components/` — reusable UI only
+- `pages/` — page-level components only
+- `hooks/` — custom hooks only
+- `utils/` — helper functions only
+- `constants/` — constant values only
+- `theme/` — theme configuration only
+
+## 13. Assets
+
+Store assets in `assets/images/`, `assets/icons/`, and `assets/fonts/`. Never place images randomly throughout the project.
+
+## 14. Clean Code Principles
+
+Write readable code. Use meaningful variable names. Avoid magic numbers and deeply nested code. Remove unused imports, unused variables, and dead code.
+
+## 15. Responsive Design
+
+Every page must be responsive. Support mobile, tablet, laptop, and desktop. Never hardcode widths that break responsiveness. Use Flexbox and CSS Grid appropriately.
+
+## 16. Accessibility
+
+Use semantic HTML: `header`, `nav`, `main`, `section`, `article`, `footer`, `button`, `label`. Always provide meaningful alt text for images. Ensure buttons are keyboard accessible.
+
+## 17. Performance
+
+Lazy load pages where appropriate. Optimize images. Avoid unnecessary DOM elements and repeated calculations inside render. Keep the bundle lightweight.
+
+## 18. Imports
+
+Organize imports consistently in this order:
+
+1. React
+2. Third-party libraries
+3. Assets
+4. Components
+5. Hooks
+6. Utilities
+7. Constants
+8. CSS
+
+## 19. Error Prevention
+
+Before generating code, check:
+
+- Is this component already available?
+- Can existing code be reused?
+- Is the file becoming too large?
+- Can logic be moved into a hook?
+- Can constants be separated?
+- Can utilities be reused?
+
+## 20. Final Checklist (Mandatory Before Writing Code)
+
+- Frontend only
+- React JS only
+- No TypeScript
+- Normal CSS only
+- Separate CSS file for every JSX file
+- CamelCase naming everywhere
+- Reusable components
+- Clean folder structure
+- Theme values imported from the theme folder
+- Assets stored correctly
+- Code optimized
+- No duplicate logic or components
+- Responsive design
+- Accessible HTML
+- Comments only for complex logic
+- Split large files into smaller modules
+- Remove unused imports and code before completion
+
+## 21. UI Reference Rule (Highest Priority)
+
+When the user provides a reference image, design mockup, screenshot, Figma, Dribbble, or any visual reference:
+
+- Treat the reference as the single source of truth.
+- Replicate the UI as closely as possible.
+- Match layout, spacing, alignment, typography, colors, sizing, borders, shadows, icons, and overall visual appearance.
+- Do not redesign, modernize, or modify the UI on your own.
+- Do not add extra sections, animations, or components unless explicitly requested.
+- Focus on pixel-perfect implementation while keeping code clean, reusable, and responsive.
+
+## 22. UI Modification Rule
+
+Once a screen has been implemented:
+
+- Do not modify existing UI, layout, spacing, colors, typography, structure, or component behavior unless explicitly requested.
+- When a change is requested, modify only the specific part mentioned.
+- Do not refactor unrelated files.
+- Do not change existing functionality while implementing a new feature.
+- Preserve all existing code and behavior unless the requested change requires it.
+- If a requested change impacts other components, explain why before making additional modifications.
+
+## 23. Existing Code Protection Rule
+
+Always respect the existing project structure and codebase.
+
+Before writing new code:
+
+- Analyze the existing implementation.
+- Reuse existing components whenever possible.
+- Do not rename, move, or restructure files/folders unless instructed.
+- Do not remove existing code that is still being used.
+- Never perform unnecessary refactoring.
+
+The project should remain stable after every update.
+
+## 24. Screen-by-Screen Development Rule
+
+Develop the website one screen at a time.
+
+For every new screen:
+
+- Match the provided reference exactly.
+- Complete the current screen before moving to the next one.
+- Do not implement future screens unless instructed.
+- Do not assume missing sections.
+- Wait for further instructions before creating additional pages or features.
+
+## 25. Cursor Behavior Rule (Mandatory)
+
+Never make assumptions.
+
+If requirements are unclear, ask for clarification instead of guessing. Never generate extra features that were not requested. Never change completed work unless instructed. Follow the latest user instruction while preserving all previous completed work.
