@@ -1,0 +1,121 @@
+.admissionsFunnelPanel {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 1.25rem;
+  padding: 1px;
+  background: linear-gradient(
+    145deg,
+    rgba(0, 200, 150, 0.35) 0%,
+    rgba(255, 255, 255, 0.06) 50%,
+    rgba(0, 200, 150, 0.2) 100%
+  );
+  box-shadow:
+    0 28px 64px rgba(0, 0, 0, 0.35),
+    0 0 48px rgba(0, 200, 150, 0.1);
+}
+
+.admissionsFunnelGlow {
+  position: absolute;
+  top: -15%;
+  right: -10%;
+  width: 60%;
+  height: 50%;
+  background: radial-gradient(circle, rgba(0, 200, 150, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+  filter: blur(30px);
+}
+
+.admissionsFunnelInner {
+  position: relative;
+  z-index: 1;
+  border-radius: 1.2rem;
+  padding: 1.5rem 1.375rem 1.625rem;
+  background: linear-gradient(
+    165deg,
+    rgba(18, 52, 86, 0.97) 0%,
+    rgba(15, 43, 74, 0.99) 100%
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.admissionsFunnelHeader {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admissionsFunnelTitle {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #F8FAFC;
+  letter-spacing: -0.02em;
+}
+
+.admissionsFunnelList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+}
+
+.admissionsFunnelRowHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.admissionsFunnelLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #B8C9DA;
+}
+
+.admissionsFunnelCount {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #F8FAFC;
+  font-variant-numeric: tabular-nums;
+}
+
+.admissionsFunnelTrack {
+  height: 0.625rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.admissionsFunnelBar {
+  height: 100%;
+  border-radius: 9999px;
+  min-width: 0;
+  box-shadow: 0 0 12px rgba(0, 200, 150, 0.25);
+}
+
+.admissionsFunnelBarEnquiry {
+  background: linear-gradient(90deg, #00C896 0%, #2DD4BF 100%);
+}
+
+.admissionsFunnelBarFollowup {
+  background: linear-gradient(90deg, #00C896 0%, #F5A623 100%);
+}
+
+.admissionsFunnelBarForm {
+  background: linear-gradient(90deg, #00C896 0%, #FBBF24 100%);
+}
+
+.admissionsFunnelBarAdmission {
+  background: linear-gradient(90deg, #0D9488 0%, #00C896 100%);
+}
+
+@media (max-width: 991px) {
+  .admissionsFunnelPanel {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}

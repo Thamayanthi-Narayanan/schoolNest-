@@ -1,0 +1,113 @@
+.featuresSection {
+  --feature-card-bg: #E8FAF5;
+  --feature-card-border: rgba(0, 200, 150, 0.22);
+  --feature-accent: #00C896;
+  --feature-title: #0F2B4A;
+  --feature-text: #2A5C6B;
+
+  background: #0F2B4A;
+  padding: 5rem clamp(1.5rem, 5vw, 4.5rem) 5.5rem;
+}
+
+.featuresContainer {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.featuresHeading {
+  margin: 0 0 3rem;
+  text-align: center;
+  font-size: clamp(2rem, 3.8vw, 3.125rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--feature-accent);
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.featureCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--feature-card-bg);
+  border-radius: 1.125rem;
+  padding: 1.375rem 1.5rem 1.25rem;
+  border: 1px solid var(--feature-card-border);
+  box-shadow:
+    0 8px 20px rgba(15, 43, 74, 0.14),
+    0 0 0 1px rgba(0, 200, 150, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  cursor: default;
+}
+
+.featureCardIconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.625rem;
+  height: 2.625rem;
+  margin: 0 auto 0.875rem;
+  border-radius: 0.75rem;
+  background: rgba(0, 200, 150, 0.16);
+  border: 1px solid rgba(0, 200, 150, 0.35);
+  color: var(--feature-accent);
+  box-shadow: 0 4px 14px rgba(0, 200, 150, 0.2);
+}
+
+.featureCardTitle {
+  margin: 0 0 0.5rem;
+  font-size: 1.3125rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--feature-title);
+  letter-spacing: -0.02em;
+}
+
+.featureCardTitleHighlight {
+  display: inline;
+  background: linear-gradient(180deg, transparent 58%, rgba(0, 200, 150, 0.28) 58%);
+  padding: 0 0.15rem;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.featureCardDescription {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--feature-text);
+}
+
+@media (min-width: 768px) {
+  .featuresGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.375rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .featuresSection {
+    padding-top: 4rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .featuresHeading {
+    margin-bottom: 2.25rem;
+  }
+
+  .featureCard {
+    padding: 1.25rem 1.25rem 1.125rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featureCard {
+    transition: none;
+  }
+}

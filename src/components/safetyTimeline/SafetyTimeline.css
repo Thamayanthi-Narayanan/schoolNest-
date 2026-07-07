@@ -1,0 +1,123 @@
+.safetyTimeline {
+  position: relative;
+  padding-left: 0;
+}
+
+.safetyTimelineTrack {
+  position: absolute;
+  left: 1.0625rem;
+  top: 1.125rem;
+  bottom: 1.125rem;
+  width: 2px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: visible;
+}
+
+@media (min-width: 992px) {
+  .safetyTimeline {
+    min-height: 100%;
+  }
+
+  .safetyTimelineTrack {
+    top: 1.125rem;
+    bottom: 1.125rem;
+  }
+}
+
+.safetyTimelineLineFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(
+    180deg,
+    #00C896 0%,
+    #2DD4BF 35%,
+    #F5A623 70%,
+    #00C896 100%
+  );
+  box-shadow: 0 0 12px rgba(0, 200, 150, 0.4);
+}
+
+.safetyTimelineBusWrap {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.safetyTimelineBus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.625rem;
+  height: 1.625rem;
+  border-radius: 50%;
+  background: #0F2B4A;
+  border: 2px solid #00C896;
+  color: #00C896;
+  box-shadow:
+    0 0 16px rgba(0, 200, 150, 0.5),
+    0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.safetyTimelineList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.safetyTimelineItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.safetyTimelineIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.375rem;
+  height: 2.375rem;
+  border-radius: 50%;
+  background: rgba(0, 200, 150, 0.12);
+  border: 1px solid rgba(0, 200, 150, 0.35);
+  color: #00C896;
+  box-shadow: 0 0 16px rgba(0, 200, 150, 0.12);
+}
+
+.safetyTimelineContent {
+  flex: 1;
+  min-width: 0;
+  padding-top: 0.2rem;
+}
+
+.safetyTimelineTitle {
+  margin: 0 0 0.4375rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #F8FAFC;
+  letter-spacing: -0.01em;
+}
+
+.safetyTimelineText {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #94A3B8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .safetyTimelineBusWrap {
+    top: 4%;
+  }
+}

@@ -1,0 +1,111 @@
+.siteFooter {
+  padding: 2.5rem 0 2.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.siteFooterTop {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+
+.siteFooterBrand {
+  text-align: center;
+}
+
+.siteFooterLogo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+
+.siteFooterLogoIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  background: #0D9488;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.28);
+}
+
+.siteFooterLogoText {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #F8FAFC;
+  letter-spacing: -0.02em;
+}
+
+.siteFooterTagline {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #8FA3B8;
+}
+
+.siteFooterNav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.25rem;
+}
+
+.siteFooterLink {
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #F8FAFC;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.siteFooterLink:hover {
+  color: #00C896;
+}
+
+.siteFooterBoards {
+  margin: 0;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #8FA3B8;
+}
+
+.siteFooterCopyright {
+  margin: 0;
+  text-align: center;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: #64748B;
+}
+
+@media (min-width: 768px) {
+  .siteFooterTop {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .siteFooterBrand {
+    text-align: left;
+  }
+
+  .siteFooterBoards {
+    text-align: right;
+  }
+}
+
+@media (max-width: 767px) {
+  .siteFooter {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}

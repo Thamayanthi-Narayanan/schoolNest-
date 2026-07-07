@@ -1,0 +1,121 @@
+.switchingSection {
+  background: var(--section-gray, #F1F5F9);
+  padding: 5rem clamp(1.5rem, 5vw, 4.5rem) 5.5rem;
+}
+
+.switchingContainer {
+  max-width: 1180px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.switchingHeading {
+  margin: 0 0 3rem;
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: #0F2B4A;
+}
+
+.switchingGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem 1.375rem;
+  text-align: left;
+}
+
+.switchingCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border-radius: 1.125rem;
+  padding: 2.25rem 1.625rem 1.75rem;
+  border: 1px solid rgba(15, 43, 74, 0.06);
+  box-shadow: 0 8px 24px rgba(15, 43, 74, 0.06);
+  cursor: default;
+}
+
+.switchingStepBadge {
+  position: absolute;
+  top: -0.875rem;
+  left: 1.375rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: #00C896;
+  color: #FFFFFF;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: 0 4px 12px rgba(0, 200, 150, 0.35);
+  border: 2px solid #F1F5F9;
+}
+
+.switchingCardIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-bottom: 1.125rem;
+  border-radius: 0.625rem;
+  background: #E8EDF2;
+  border: 1px solid rgba(15, 43, 74, 0.08);
+  color: #64748B;
+}
+
+.switchingCardTitle {
+  margin: 0 0 0.625rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: #0F2B4A;
+}
+
+.switchingCardText {
+  margin: 0;
+  flex: 1;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: #64748B;
+}
+
+@media (min-width: 768px) {
+  .switchingGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+
+  .switchingCard {
+    height: 100%;
+    padding-top: 2.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .switchingSection {
+    padding-top: 4rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .switchingHeading {
+    margin-bottom: 2.5rem;
+  }
+
+  .switchingGrid {
+    gap: 2.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .switchingCard {
+    transition: none;
+  }
+}

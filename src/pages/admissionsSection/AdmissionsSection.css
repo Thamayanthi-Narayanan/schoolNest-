@@ -1,0 +1,145 @@
+.admissionsSection {
+  background: linear-gradient(180deg, #0A2038 0%, #0F2B4A 45%, #123456 100%);
+  padding: 5rem clamp(1.5rem, 5vw, 4.5rem) 4.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.admissionsSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 200, 150, 0.3) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.admissionsContainer {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.admissionsContent {
+  max-width: 560px;
+}
+
+.admissionsHeading {
+  margin: 0 0 1.25rem;
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #F8FAFC;
+}
+
+.admissionsSubtext {
+  margin: 0 0 1.75rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: #B8C9DA;
+}
+
+.admissionsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+}
+
+.admissionsItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+}
+
+.admissionsCheck {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: 0.15rem;
+  border-radius: 50%;
+  background: rgba(0, 200, 150, 0.15);
+  border: 1px solid rgba(0, 200, 150, 0.35);
+  color: #00C896;
+}
+
+.admissionsText {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: #B8C9DA;
+}
+
+.admissionsQuote {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 4rem auto 0;
+  padding: 0;
+  border: none;
+  text-align: center;
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #2DD4BF;
+  letter-spacing: -0.01em;
+}
+
+.admissionsQuote::before {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 2px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(90deg, transparent, rgba(45, 212, 191, 0.5), transparent);
+}
+
+@media (min-width: 992px) {
+  .admissionsContainer {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 480px);
+    gap: clamp(2.5rem, 5vw, 4.5rem);
+  }
+}
+
+@media (max-width: 991px) {
+  .admissionsSection {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .admissionsContent {
+    max-width: none;
+    text-align: center;
+  }
+
+  .admissionsItem {
+    text-align: left;
+  }
+
+  .admissionsList {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .admissionsQuote {
+    margin-top: 3rem;
+  }
+}

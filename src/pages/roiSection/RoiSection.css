@@ -1,0 +1,177 @@
+.roiSection {
+  background: var(--section-gray, #F1F5F9);
+  padding: 5rem clamp(1.5rem, 5vw, 4.5rem) 5.5rem;
+}
+
+.roiContainer {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.roiLeakageCard {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, #0F2B4A 0%, #123456 55%, #0A2038 100%);
+  border-radius: 1.25rem;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow:
+    0 24px 56px rgba(15, 43, 74, 0.28),
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.roiLeakageGlow {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 55%;
+  background: radial-gradient(circle, rgba(0, 200, 150, 0.22) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.roiLeakageAmount {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 0.625rem;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #00C896;
+  text-shadow: 0 0 32px rgba(0, 200, 150, 0.35);
+}
+
+.roiLeakageLabel {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 1.375rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #94A3B8;
+}
+
+.roiLeakageText {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: #E2E8F0;
+}
+
+.roiContent {
+  text-align: center;
+}
+
+.roiLabel {
+  margin: 0 0 1rem;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #D97706;
+}
+
+.roiHeadline {
+  margin: 0 0 1.375rem;
+  font-size: clamp(2rem, 3.6vw, 2.875rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: #0F2B4A;
+  min-height: calc(2 * 1.2em);
+}
+
+.roiHeadlineLine {
+  display: block;
+}
+
+.roiWord {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  filter: blur(4px);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+.roiWordVisible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.roiWordAccent {
+  color: #0F2B4A;
+  background: linear-gradient(180deg, transparent 58%, rgba(0, 200, 150, 0.22) 58%);
+  padding: 0 0.1rem;
+}
+
+.roiSubtext {
+  margin: 0 auto;
+  max-width: 540px;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: #475569;
+}
+
+.roiSubtextHighlight {
+  color: #0F2B4A;
+  font-weight: 700;
+  background: linear-gradient(180deg, transparent 62%, rgba(217, 119, 6, 0.18) 62%);
+  padding: 0 0.1rem;
+}
+
+@media (min-width: 992px) {
+  .roiContainer {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(2rem, 4vw, 4rem);
+  }
+
+  .roiContent {
+    text-align: left;
+  }
+
+  .roiSubtext {
+    margin-left: 0;
+  }
+
+  .roiHeadline {
+    min-height: calc(2 * 1.2em);
+  }
+}
+
+@media (max-width: 991px) {
+  .roiSection {
+    padding-top: 4rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .roiHeadline {
+    min-height: auto;
+  }
+
+  .roiLeakageCard {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .roiWord {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}

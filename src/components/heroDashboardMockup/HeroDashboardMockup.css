@@ -1,0 +1,348 @@
+.heroDashboardMockup {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.mockupDecor {
+  position: absolute;
+  border: 2px solid rgba(0, 200, 150, 0.15);
+  border-radius: 1.25rem;
+  pointer-events: none;
+}
+
+.mockupDecorOne {
+  width: 88%;
+  height: 72%;
+  top: 8%;
+  right: 2%;
+  transform: rotate(6deg);
+}
+
+.mockupDecorTwo {
+  width: 70%;
+  height: 58%;
+  top: 18%;
+  right: 10%;
+  transform: rotate(-4deg);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.mockupDecorThree {
+  width: 52%;
+  height: 42%;
+  bottom: 12%;
+  left: 4%;
+  border-radius: 50%;
+  border-color: rgba(0, 200, 150, 0.1);
+}
+
+.mockupBrowser {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow:
+    0 32px 64px rgba(0, 0, 0, 0.28),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.mockupBrowserBar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: #F8FAFC;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.mockupBrowserDots {
+  display: flex;
+  gap: 0.375rem;
+}
+
+.mockupBrowserDots span {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  background: #CBD5E1;
+}
+
+.mockupBrowserDots span:nth-child(1) { background: #FCA5A5; }
+.mockupBrowserDots span:nth-child(2) { background: #FDE68A; }
+.mockupBrowserDots span:nth-child(3) { background: #86EFAC; }
+
+.mockupBrowserTitle {
+  flex: 1;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748B;
+  margin-right: 2.5rem;
+}
+
+.mockupBrowserBody {
+  position: relative;
+  padding: 1.25rem 1rem 1.5rem;
+  background: linear-gradient(180deg, #F1F5F9 0%, #E2E8F0 100%);
+}
+
+.mockupMonitor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mockupMonitorBezel {
+  width: 100%;
+  padding: 0.5rem;
+  background: linear-gradient(180deg, #D1D5DB 0%, #9CA3AF 100%);
+  border-radius: 0.75rem 0.75rem 0 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.mockupDashboard {
+  display: flex;
+  min-height: 220px;
+  background: #F8FAFC;
+  border-radius: 0.35rem;
+  overflow: hidden;
+  font-size: 0.5625rem;
+}
+
+.mockupSidebar {
+  width: 28%;
+  background: #1E293B;
+  padding: 0.5rem 0.375rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.mockupSidebarLogo {
+  color: #00C896;
+  font-weight: 700;
+  font-size: 0.625rem;
+  margin-bottom: 0.375rem;
+  padding: 0 0.25rem;
+}
+
+.mockupSidebarItem {
+  color: #94A3B8;
+  padding: 0.25rem 0.375rem;
+  border-radius: 0.25rem;
+  font-size: 0.5rem;
+}
+
+.mockupSidebarItemActive {
+  background: rgba(0, 200, 150, 0.15);
+  color: #FFFFFF;
+}
+
+.mockupDashboardMain {
+  flex: 1;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.mockupDashboardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.mockupGreeting {
+  margin: 0;
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.mockupDate {
+  margin: 0.125rem 0 0;
+  font-size: 0.5rem;
+  color: #64748B;
+}
+
+.mockupSearchBar {
+  width: 3rem;
+  height: 0.875rem;
+  background: #E2E8F0;
+  border-radius: 9999px;
+}
+
+.mockupStatGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.25rem;
+}
+
+.mockupStatCard {
+  border-radius: 0.375rem;
+  padding: 0.3rem 0.35rem;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.mockupStatLabel {
+  font-size: 0.4375rem;
+  opacity: 0.9;
+}
+
+.mockupStatCard strong {
+  font-size: 0.5625rem;
+  line-height: 1.2;
+}
+
+.mockupStatOrange { background: linear-gradient(135deg, #F97316, #EA580C); }
+.mockupStatPurple { background: linear-gradient(135deg, #A855F7, #7C3AED); }
+.mockupStatGreen { background: linear-gradient(135deg, #22C55E, #16A34A); }
+.mockupStatGray { background: linear-gradient(135deg, #64748B, #475569); }
+
+.mockupQuickActions {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.mockupQuickActions span {
+  font-size: 0.4375rem;
+  background: #DBEAFE;
+  color: #1D4ED8;
+  padding: 0.2rem 0.35rem;
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+.mockupBottomRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.25rem;
+}
+
+.mockupPanel {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 0.375rem;
+  padding: 0.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.mockupPanel span {
+  font-size: 0.4375rem;
+  color: #64748B;
+}
+
+.mockupPanel strong {
+  font-size: 0.5rem;
+  color: #0F172A;
+}
+
+.mockupMonitorStand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.mockupMonitorNeck {
+  width: 18%;
+  height: 1.25rem;
+  background: linear-gradient(180deg, #9CA3AF, #6B7280);
+}
+
+.mockupMonitorBase {
+  width: 32%;
+  height: 0.5rem;
+  background: #9CA3AF;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.mockupFloatCard {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  background: #FFFFFF;
+  border-radius: 0.875rem;
+  padding: 0.75rem 0.875rem;
+  box-shadow: 0 12px 32px rgba(15, 43, 74, 0.18);
+  min-width: 160px;
+}
+
+.mockupFloatCard strong {
+  display: block;
+  font-size: 0.8125rem;
+  color: #0F172A;
+  margin-bottom: 0.125rem;
+}
+
+.mockupFloatCard p {
+  margin: 0;
+  font-size: 0.6875rem;
+  color: #64748B;
+}
+
+.mockupFloatIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.mockupFloatIconGreen {
+  background: #DCFCE7;
+  color: #16A34A;
+}
+
+.mockupFloatIconBlue {
+  background: #DBEAFE;
+  color: #2563EB;
+}
+
+.mockupFloatPayment {
+  top: 1.5rem;
+  right: -0.75rem;
+}
+
+.mockupFloatReceipt {
+  bottom: 2rem;
+  left: -0.5rem;
+}
+
+@media (max-width: 991px) {
+  .mockupFloatPayment {
+    right: 0.25rem;
+  }
+
+  .mockupFloatReceipt {
+    left: 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mockupStatGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mockupFloatCard {
+    min-width: 140px;
+    padding: 0.625rem 0.75rem;
+  }
+
+  .mockupFloatCard strong {
+    font-size: 0.75rem;
+  }
+}

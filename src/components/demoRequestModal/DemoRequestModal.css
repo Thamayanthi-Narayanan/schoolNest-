@@ -1,0 +1,334 @@
+.demoRequestOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: rgba(10, 32, 56, 0.48);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.demoRequestModal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 580px);
+  max-height: calc(100vh - 2.5rem);
+  border-radius: 1.375rem;
+  overflow: hidden;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F4FBF8 100%);
+  border: 1px solid rgba(0, 200, 150, 0.18);
+  box-shadow:
+    0 28px 72px rgba(10, 32, 56, 0.38),
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.demoRequestHeader {
+  position: relative;
+  flex-shrink: 0;
+  padding: 1.75rem 1.75rem 1.375rem;
+  background: linear-gradient(135deg, #0F2B4A 0%, #123456 55%, #0A2038 100%);
+  border-bottom: 1px solid rgba(0, 200, 150, 0.2);
+}
+
+.demoRequestHeaderGlow {
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(0, 200, 150, 0.22) 0%, transparent 68%);
+  pointer-events: none;
+}
+
+.demoRequestHeaderContent {
+  position: relative;
+  z-index: 1;
+  padding-right: 2.5rem;
+}
+
+.demoRequestBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.875rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  background: rgba(0, 200, 150, 0.14);
+  border: 1px solid rgba(0, 200, 150, 0.32);
+  color: #5EEAD4;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.demoRequestTitle {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: #F8FAFC;
+}
+
+.demoRequestDescription {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: #B8C9DA;
+}
+
+.demoRequestClose {
+  position: absolute;
+  top: 1.125rem;
+  right: 1.125rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.625rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: #E2E8F0;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.demoRequestClose:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.24);
+  color: #FFFFFF;
+}
+
+.demoRequestBody {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 1.5rem 1.75rem 1.75rem;
+  background:
+    radial-gradient(circle at top right, rgba(0, 200, 150, 0.06) 0%, transparent 42%),
+    linear-gradient(180deg, #FAFDFC 0%, #F1F5F9 100%);
+}
+
+.demoRequestBody::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.demoRequestForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+}
+
+.demoRequestFieldRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.125rem;
+}
+
+.demoRequestField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4375rem;
+}
+
+.demoRequestLabel {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #1E3A5F;
+}
+
+.demoRequestOptional {
+  font-weight: 500;
+  color: #94A3B8;
+}
+
+.demoRequestInput {
+  width: 100%;
+  padding: 0.8125rem 0.9375rem;
+  border: 1px solid rgba(15, 43, 74, 0.1);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.88);
+  color: #0F2B4A;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  box-shadow:
+    inset 0 1px 2px rgba(15, 43, 74, 0.04),
+    0 1px 0 rgba(255, 255, 255, 0.8);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.demoRequestInput::placeholder {
+  color: #94A3B8;
+}
+
+.demoRequestInput:hover {
+  border-color: rgba(0, 200, 150, 0.28);
+  background: #FFFFFF;
+}
+
+.demoRequestInput:focus {
+  outline: none;
+  border-color: #00C896;
+  background: #FFFFFF;
+  box-shadow:
+    0 0 0 3px rgba(0, 200, 150, 0.16),
+    inset 0 1px 2px rgba(15, 43, 74, 0.04);
+}
+
+.demoRequestInputError {
+  border-color: #EF4444;
+  background: #FEF2F2;
+}
+
+.demoRequestInputError:hover {
+  border-color: #EF4444;
+  background: #FEF2F2;
+}
+
+.demoRequestInputError:focus {
+  border-color: #EF4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.16);
+}
+
+.demoRequestError {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #DC2626;
+  font-weight: 500;
+}
+
+.demoRequestTextarea {
+  resize: vertical;
+  min-height: 6.25rem;
+}
+
+.demoRequestInput[type='number'] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.demoRequestInput[type='number']::-webkit-outer-spin-button,
+.demoRequestInput[type='number']::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+.demoRequestSubmit {
+  margin-top: 0.125rem;
+  width: 100%;
+  padding: 0.96875rem 1.25rem;
+  border: none;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #00C896 0%, #14B8A6 100%);
+  color: #FFFFFF;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow:
+    0 10px 28px rgba(0, 200, 150, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.demoRequestSubmit:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+  box-shadow:
+    0 14px 32px rgba(0, 200, 150, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.demoRequestFootnote {
+  margin: 0;
+  text-align: center;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #64748B;
+}
+
+.demoRequestSuccess {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem 0.5rem 0.25rem;
+}
+
+.demoRequestSuccessIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.25rem;
+  height: 4.25rem;
+  margin-bottom: 1.125rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0, 200, 150, 0.18) 0%, rgba(0, 200, 150, 0.08) 100%);
+  border: 1px solid rgba(0, 200, 150, 0.28);
+  color: #00C896;
+  box-shadow: 0 8px 24px rgba(0, 200, 150, 0.18);
+}
+
+.demoRequestSuccessText {
+  margin: 0 0 1.5rem;
+  max-width: 380px;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: #475569;
+}
+
+.demoRequestSuccessText strong {
+  color: #0F2B4A;
+  font-weight: 700;
+}
+
+@media (min-width: 640px) {
+  .demoRequestFieldRow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 639px) {
+  .demoRequestHeader {
+    padding: 1.5rem 1.25rem 1.125rem;
+  }
+
+  .demoRequestBody {
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+
+  .demoRequestTitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demoRequestBody {
+    scroll-behavior: auto;
+  }
+
+  .demoRequestSubmit {
+    transition: none;
+  }
+}

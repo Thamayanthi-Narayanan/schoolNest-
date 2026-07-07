@@ -1,0 +1,217 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 0.875rem 0;
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    backdrop-filter 0.35s ease;
+}
+
+.navbarTransparent {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #E2E8F0;
+  box-shadow: none;
+}
+
+.navbarScrolled {
+  background: #FFFFFF;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid #E2E8F0;
+  box-shadow: 0 4px 20px rgba(15, 43, 74, 0.08);
+}
+
+.navbarInner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 5vw, 4.5rem);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbarLogo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.625rem;
+  height: 2.625rem;
+  background: #0D9488;
+  border-radius: 0.5rem;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.25);
+}
+
+.logoSchool {
+  color: #1E3A5F;
+  font-weight: 700;
+  font-size: 1.9375rem;
+  letter-spacing: -0.03em;
+}
+
+.logoNest {
+  color: #0D9488;
+  font-weight: 700;
+  font-size: 1.9375rem;
+  letter-spacing: -0.03em;
+}
+
+.navbarLinks {
+  display: none;
+  align-items: center;
+  gap: 1.625rem;
+  margin-left: auto;
+}
+
+.navbarLink {
+  background: none;
+  border: none;
+  color: #4A6278;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s;
+  font-family: inherit;
+}
+
+.navbarLink:hover {
+  color: #2C4A66;
+}
+
+.navbarCta {
+  display: none;
+  background: #0D9488;
+  color: #FFFFFF;
+  border: none;
+  padding: 0.6875rem 1.375rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  font-family: inherit;
+  box-shadow: 0 6px 18px rgba(13, 148, 136, 0.22);
+}
+
+.navbarCta:hover {
+  transform: translateY(-1px);
+  background: #0F766E;
+  box-shadow: 0 10px 24px rgba(13, 148, 136, 0.28);
+}
+
+.navbarHamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #1E3A5F;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.mobileDrawer {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.mobileDrawerOpen {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.mobileDrawerOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.mobileDrawerOpen .mobileDrawerOverlay {
+  opacity: 1;
+}
+
+.mobileDrawerPanel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(320px, 85vw);
+  height: 100%;
+  background: #FFFFFF;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  box-shadow: -8px 0 32px rgba(15, 23, 42, 0.12);
+}
+
+.mobileDrawerOpen .mobileDrawerPanel {
+  transform: translateX(0);
+}
+
+.mobileDrawerClose {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: #1E3A5F;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.mobileDrawerLink {
+  background: none;
+  border: none;
+  color: #475569;
+  font-size: 1.25rem;
+  text-align: left;
+  padding: 0.75rem 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.mobileDrawerCta {
+  margin-top: 1rem;
+  background: #0D9488;
+  color: #FFFFFF;
+  border: none;
+  padding: 0.875rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+@media (min-width: 768px) {
+  .navbarLinks {
+    display: flex;
+  }
+
+  .navbarCta {
+    display: block;
+  }
+
+  .navbarHamburger {
+    display: none;
+  }
+}

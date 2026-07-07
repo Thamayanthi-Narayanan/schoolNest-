@@ -1,0 +1,157 @@
+.demoSection {
+  position: relative;
+  background: linear-gradient(165deg, #0F2B4A 0%, #123456 48%, #0A2038 100%);
+  padding: 5.5rem clamp(1.5rem, 5vw, 4.5rem) 0;
+  overflow: hidden;
+}
+
+.demoGlow {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(720px, 90vw);
+  height: 420px;
+  background: radial-gradient(circle, rgba(0, 200, 150, 0.14) 0%, transparent 68%);
+  pointer-events: none;
+}
+
+.demoContainer {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.demoIntro {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3rem;
+}
+
+.demoHeading {
+  margin: 0 0 1.25rem;
+  font-size: clamp(2rem, 4vw, 3.125rem);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+}
+
+.demoHeadingLine {
+  display: block;
+  color: #F8FAFC;
+}
+
+.demoHeadingAccent {
+  display: block;
+  color: #00C896;
+}
+
+.demoSubtext {
+  margin: 0 auto 2rem;
+  max-width: 560px;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: #B8C9DA;
+}
+
+.demoCtaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 9999px;
+  background: #00C896;
+  color: #FFFFFF;
+  font-family: inherit;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow:
+    0 10px 32px rgba(0, 200, 150, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.demoCtaButton:hover {
+  background: #2DD4BF;
+  box-shadow:
+    0 14px 36px rgba(0, 200, 150, 0.42),
+    0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.demoContactGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.875rem;
+  margin-bottom: 3.5rem;
+}
+
+.demoContactCard {
+  background: #F1F5F9;
+  border-radius: 0.875rem;
+  border: 1px solid rgba(15, 43, 74, 0.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+}
+
+.demoContactLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.9375rem 1.125rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.demoContactIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #00C896;
+  flex-shrink: 0;
+}
+
+.demoContactLabel {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #0D9488;
+  line-height: 1.4;
+}
+
+@media (min-width: 640px) {
+  .demoContactGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .demoContactGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.125rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .demoSection {
+    padding-top: 4.5rem;
+  }
+
+  .demoIntro {
+    margin-bottom: 2.25rem;
+  }
+
+  .demoContactGrid {
+    margin-bottom: 2.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demoContactCard,
+  .demoCtaButton {
+    transition: none;
+  }
+}
