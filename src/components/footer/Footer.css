@@ -17,29 +17,8 @@
 
 .siteFooterLogo {
   display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
   text-decoration: none;
   margin-bottom: 0.5rem;
-}
-
-.siteFooterLogoIcon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.25rem;
-  height: 2.25rem;
-  border-radius: 0.5rem;
-  background: #0D9488;
-  color: #FFFFFF;
-  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.28);
-}
-
-.siteFooterLogoText {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #F8FAFC;
-  letter-spacing: -0.02em;
 }
 
 .siteFooterTagline {

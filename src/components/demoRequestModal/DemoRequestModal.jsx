@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { CalendarCheck, CheckCircle2, X } from 'lucide-react';
 import { useDemoForm } from '../../contexts/demoFormContext/DemoFormContext';
+import { submitDemoRequest } from '../../services/demoFormService';
 import { hasValidationErrors, sanitizeDemoFormInput, validateDemoField, validateDemoForm } from '../../utils/demoFormValidation';
 import './DemoRequestModal.css';
 
@@ -42,6 +43,8 @@ export default function DemoRequestModal() {
   const [formData, setFormData] = useState(initialFormState);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   useEffect(() => {
     if (!isDemoFormOpen) {
@@ -68,6 +71,8 @@ export default function DemoRequestModal() {
   useEffect(() => {
     if (!isDemoFormOpen) {
       setIsSubmitted(false);
+      setIsSubmitting(false);
+      setSubmitError('');
       setFormData(initialFormState);
       setFormErrors({});
     }
@@ -117,17 +122,31 @@ export default function DemoRequestModal() {
   const getInputClassName = (fieldName) =>
     `demoRequestInput${formErrors[fieldName] ? ' demoRequestInputError' : ''}`;
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     const errors = validateDemoForm(formData);
     setFormErrors(errors);
+    setSubmitError('');
 
     if (hasValidationErrors(errors)) {
       return;
     }
 
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      await submitDemoRequest(formData);
+      setIsSubmitted(true);
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : 'Unable to send your request. Please try again.'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleOverlayClick = (event) => {
@@ -306,9 +325,19 @@ export default function DemoRequestModal() {
                 />
               </FormField>
 
-              <button type="submit" className="demoRequestSubmit">
-                Submit Request
+              <button
+                type="submit"
+                className="demoRequestSubmit"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Sending...' : 'Submit Request'}
               </button>
+
+              {submitError && (
+                <p className="demoRequestSubmitError" role="alert">
+                  {submitError}
+                </p>
+              )}
 
               <p className="demoRequestFootnote">
                 No spam. A real person from our Tamil Nadu team will follow up.

@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import { motion } from 'framer-motion';
 import { CreditCard, Fingerprint, MessageCircle } from 'lucide-react';
 import { useWordRevealInView } from '../../hooks/useWordRevealInView';
-import HeroVisual from '../../components/heroVisual/HeroVisual';
+import PlatformVisualSlider from '../../components/platformVisualSlider/PlatformVisualSlider';
 import './PlatformSection.css';
 
 const platformHeadlineWords = [
@@ -92,7 +92,7 @@ export default function PlatformSection() {
         >
           <span className="platformPremiumBadge">Premium Dashboard</span>
           <div className="platformVisualFrame">
-            <HeroVisual />
+            <PlatformVisualSlider />
           </div>
         </motion.div>
 

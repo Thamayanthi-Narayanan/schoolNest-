@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { ChevronUp, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useDemoForm } from '../../contexts/demoFormContext/DemoFormContext';
+import SchoolNestLogo from '../schoolNestLogo/SchoolNestLogo';
 import './Navbar.css';
 
 const navLinks = [
@@ -50,13 +51,7 @@ export default function Navbar() {
               handleNavClick('hero');
             }}
           >
-            <span className="logoIcon">
-              <ChevronUp size={22} strokeWidth={3} />
-            </span>
-            <span className="logoText">
-              <span className="logoSchool">School</span>
-              <span className="logoNest">nest</span>
-            </span>
+            <SchoolNestLogo size={42} />
           </a>
 
           <nav className="navbarLinks" aria-label="Main navigation">

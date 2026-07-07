@@ -40,35 +40,8 @@
 .navbarLogo {
   display: flex;
   align-items: center;
-  gap: 0.625rem;
   text-decoration: none;
   flex-shrink: 0;
-}
-
-.logoIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.625rem;
-  height: 2.625rem;
-  background: #0D9488;
-  border-radius: 0.5rem;
-  color: #FFFFFF;
-  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.25);
-}
-
-.logoSchool {
-  color: #1E3A5F;
-  font-weight: 700;
-  font-size: 1.9375rem;
-  letter-spacing: -0.03em;
-}
-
-.logoNest {
-  color: #0D9488;
-  font-weight: 700;
-  font-size: 1.9375rem;
-  letter-spacing: -0.03em;
 }
 
 .navbarLinks {

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { ChevronUp } from 'lucide-react';
 import { useDemoForm } from '../../contexts/demoFormContext/DemoFormContext';
+import SchoolNestLogo from '../schoolNestLogo/SchoolNestLogo';
 import './Footer.css';
 
 const footerLinks = [
@@ -48,10 +48,11 @@ export default function Footer() {
               handleNavClick('hero');
             }}
           >
-            <span className="siteFooterLogoIcon">
-              <ChevronUp size={20} strokeWidth={3} />
-            </span>
-            <span className="siteFooterLogoText">Schoolnest</span>
+            <SchoolNestLogo
+              size={36}
+              wordmarkStyle="single"
+              className="schoolNestLogoFooter"
+            />
           </a>
           <p className="siteFooterTagline">A Product by Infinite Vision</p>
         </div>

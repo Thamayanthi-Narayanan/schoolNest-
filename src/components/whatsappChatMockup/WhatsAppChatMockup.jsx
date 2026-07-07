@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { ChevronUp, MessageCircle, Radio, User } from 'lucide-react';
+import { MessageCircle, Radio, User } from 'lucide-react';
+import { SchoolNestMark } from '../schoolNestLogo/SchoolNestLogo';
 import './WhatsAppChatMockup.css';
 
 const updateMessages = [
@@ -94,7 +95,7 @@ export default function WhatsAppChatMockup() {
           <div className="bleSmartCardTop">
             <div className="bleSmartCardBrand">
               <span className="bleSmartCardLogo">
-                <ChevronUp size={16} strokeWidth={3} />
+                <SchoolNestMark size={18} />
               </span>
               <div>
                 <span className="bleSmartCardName">Schoolnest</span>

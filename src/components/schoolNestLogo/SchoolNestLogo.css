@@ -1,0 +1,61 @@
+.schoolNestLogo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.schoolNestLogoMarkWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 0.6875rem;
+  box-shadow:
+    0 6px 18px rgba(0, 200, 150, 0.28),
+    0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+.schoolNestMark {
+  display: block;
+}
+
+.schoolNestLogoText {
+  display: inline-flex;
+  align-items: baseline;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.schoolNestLogoSchool {
+  color: #1E3A5F;
+  font-size: 1.9375rem;
+  font-weight: 700;
+}
+
+.schoolNestLogoNest {
+  color: #0D9488;
+  font-size: 1.9375rem;
+  font-weight: 700;
+}
+
+.schoolNestLogoTextSingle {
+  color: #F8FAFC;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.schoolNestLogoCompact .schoolNestLogoSchool,
+.schoolNestLogoCompact .schoolNestLogoNest {
+  font-size: 1.125rem;
+}
+
+.schoolNestLogoCompact .schoolNestLogoMarkWrap {
+  border-radius: 0.5625rem;
+  box-shadow:
+    0 4px 14px rgba(0, 200, 150, 0.24),
+    0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+
+.schoolNestLogoFooter .schoolNestLogoTextSingle {
+  font-size: 1.25rem;
+}
