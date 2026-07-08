@@ -1,0 +1,16 @@
+{
+  "name": "Schoolnest",
+  "short_name": "Schoolnest",
+  "description": "School Management Software",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#0F2B4A",
+  "background_color": "#F1F5F9",
+  "display": "standalone"
+}

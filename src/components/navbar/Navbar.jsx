@@ -51,7 +51,7 @@ export default function Navbar() {
               handleNavClick('hero');
             }}
           >
-            <SchoolNestLogo size={42} />
+            <SchoolNestLogo size={36} className="navbarLogoBrand" />
           </a>
 
           <nav className="navbarLinks" aria-label="Main navigation">

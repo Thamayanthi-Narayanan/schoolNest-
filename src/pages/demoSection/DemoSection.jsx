@@ -22,7 +22,7 @@ const contactItems = [
   },
   {
     icon: MapPin,
-    label: 'Ranipet, Tamil Nadu',
+    label: 'Vellore, Tamil Nadu',
     href: null,
   },
 ];
