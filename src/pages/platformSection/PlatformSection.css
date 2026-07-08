@@ -191,6 +191,11 @@
     padding-top: 3rem;
   }
 
+  .platformVisualFrame {
+    padding: 1.5rem 1rem 1rem;
+    border-radius: 1.25rem;
+  }
+
   .platformContent {
     text-align: center;
   }
@@ -206,5 +211,12 @@
 
   .platformHeadline {
     min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .platformVisualFrame {
+    padding: 1.25rem 0.875rem 0.875rem;
+    border-radius: 1.125rem;
   }
 }

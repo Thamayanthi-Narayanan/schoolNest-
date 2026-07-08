@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   overflow: visible;
+  --hero-float-scale: 1;
 }
 
 .heroVisualScene {
@@ -119,18 +120,41 @@
     padding: 0.75rem 0.5rem 1rem;
   }
 
+  /* Scale float cards down so the dashboard stays visible */
+  .heroVisualBlock {
+    --hero-float-scale: clamp(0.45, calc(100vw / 520), 0.78);
+  }
+
+  .heroFloatCard {
+    transform: scale(var(--hero-float-scale));
+    transform-origin: center;
+  }
+
   .heroFloatCardInner {
-    min-width: 158px;
-    padding: 0.625rem 0.75rem;
+    min-width: clamp(110px, 56vw, 158px);
+    padding: clamp(0.45rem, 2.2vw, 0.625rem) clamp(0.55rem, 2.6vw, 0.75rem);
+    background: rgba(255, 255, 255, 0.62);
+    border-color: rgba(15, 23, 42, 0.08);
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.12);
+    backdrop-filter: blur(6px);
+    gap: 0.55rem;
+  }
+
+  .heroFloatCardInner strong {
+    font-size: 0.84rem;
+  }
+
+  .heroFloatCardInner p {
+    font-size: 0.75rem;
   }
 
   .heroFloatPayment {
     top: 0.25rem;
-    right: -0.125rem;
+    right: -0.85rem;
   }
 
   .heroFloatReceipt {
     bottom: 0.5rem;
-    left: -0.125rem;
+    left: -0.85rem;
   }
 }
