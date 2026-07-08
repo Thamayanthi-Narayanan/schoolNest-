@@ -57,18 +57,47 @@
 }
 
 .navbarLink {
+  position: relative;
   background: none;
   border: none;
   color: #4A6278;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
-  transition: color 0.2s;
+  padding: 0.35rem 0.15rem;
+  transition: color 0.2s ease;
   font-family: inherit;
 }
 
+.navbarLink::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.2rem;
+  height: 2px;
+  border-radius: 9999px;
+  background: #00C896;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.22s ease;
+}
+
 .navbarLink:hover {
-  color: #2C4A66;
+  color: #0D9488;
+}
+
+.navbarLink:hover::after {
+  transform: scaleX(0.75);
+}
+
+.navbarLinkActive {
+  color: #0D9488;
+  font-weight: 700;
+}
+
+.navbarLinkActive::after {
+  transform: scaleX(1);
 }
 
 .navbarCta {
@@ -167,10 +196,23 @@
   color: #475569;
   font-size: 1.0625rem;
   text-align: left;
-  padding: 0.625rem 0;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.625rem;
   cursor: pointer;
   font-family: inherit;
   font-weight: 500;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.mobileDrawerLink:hover {
+  color: #0D9488;
+  background: rgba(0, 200, 150, 0.08);
+}
+
+.mobileDrawerLinkActive {
+  color: #0D9488;
+  font-weight: 700;
+  background: rgba(0, 200, 150, 0.12);
 }
 
 .mobileDrawerCta {

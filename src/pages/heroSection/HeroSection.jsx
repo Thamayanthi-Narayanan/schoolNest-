@@ -1,7 +1,6 @@
 import { Fragment } from 'react';
 import { motion } from 'framer-motion';
 import { useWordReveal } from '../../hooks/useWordReveal';
-import { useDemoForm } from '../../contexts/demoFormContext/DemoFormContext';
 import Navbar from '../../components/navbar/Navbar';
 import HeroVisual from '../../components/heroVisual/HeroVisual';
 import PlatformSection from '../platformSection/PlatformSection';
@@ -75,15 +74,6 @@ const fadeUp = {
 };
 
 export default function HeroSection() {
-  const { openDemoForm } = useDemoForm();
-
-  const handleNavClick = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <div className="heroPage">
       <Navbar />
@@ -127,21 +117,6 @@ export default function HeroSection() {
               <span className="heroBadge">🟢 AI Fee Recovery</span>
               <span className="heroBadge">🟡 BLE Smart ID Cards</span>
               <span className="heroBadge">🟢 WhatsApp AI Assistant</span>
-            </motion.div>
-
-            <motion.div
-              className="heroCtaRow"
-              initial="hidden"
-              animate="visible"
-              variants={fadeUp}
-              custom={0.85}
-            >
-              <button type="button" className="btnPrimary btnLarge" onClick={openDemoForm}>
-                Request a Demo
-              </button>
-              <button type="button" className="btnGhost btnLarge" onClick={() => handleNavClick('how-it-works')}>
-                See How It Works
-              </button>
             </motion.div>
           </div>
 

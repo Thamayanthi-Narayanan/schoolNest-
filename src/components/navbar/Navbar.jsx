@@ -15,6 +15,7 @@ export default function Navbar() {
   const { openDemoForm } = useDemoForm();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,8 +27,41 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const sectionIds = navLinks.map((link) => link.id);
+    const elements = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    if (elements.length === 0) {
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntries = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visibleEntries.length > 0) {
+          setActiveSection(visibleEntries[0].target.id);
+        }
+      },
+      {
+        root: null,
+        rootMargin: '-35% 0px -45% 0px',
+        threshold: [0.1, 0.25, 0.5, 0.75],
+      }
+    );
+
+    elements.forEach((element) => observer.observe(element));
+
+    return () => observer.disconnect();
+  }, []);
+
   const handleNavClick = (sectionId) => {
     setIsMobileMenuOpen(false);
+    setActiveSection(sectionId);
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -38,6 +72,9 @@ export default function Navbar() {
     setIsMobileMenuOpen(false);
     openDemoForm();
   };
+
+  const getLinkClassName = (baseClass, sectionId) =>
+    `${baseClass}${activeSection === sectionId ? ` ${baseClass}Active` : ''}`;
 
   return (
     <>
@@ -59,8 +96,9 @@ export default function Navbar() {
               <button
                 key={link.id}
                 type="button"
-                className="navbarLink"
+                className={getLinkClassName('navbarLink', link.id)}
                 onClick={() => handleNavClick(link.id)}
+                aria-current={activeSection === link.id ? 'true' : undefined}
               >
                 {link.label}
               </button>
@@ -97,8 +135,9 @@ export default function Navbar() {
             <button
               key={link.id}
               type="button"
-              className="mobileDrawerLink"
+              className={getLinkClassName('mobileDrawerLink', link.id)}
               onClick={() => handleNavClick(link.id)}
+              aria-current={activeSection === link.id ? 'true' : undefined}
             >
               {link.label}
             </button>
